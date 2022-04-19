@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Auto.js-4.1.1.Alpha2.iml" filepath="$PROJECT_DIR$/Auto.js-4.1.1.Alpha2.iml" group="Auto.js-4.1.1.Alpha2" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Auto.js-4.1.1.Alpha2/app" />
-      <module fileurl="file://$PROJECT_DIR$/autojs/autojs.iml" filepath="$PROJECT_DIR$/autojs/autojs.iml" group="Auto.js-4.1.1.Alpha2/autojs" />
-      <module fileurl="file://$PROJECT_DIR$/automator/automator.iml" filepath="$PROJECT_DIR$/automator/automator.iml" group="Auto.js-4.1.1.Alpha2/automator" />
-      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" group="Auto.js-4.1.1.Alpha2/common" />
-      <module fileurl="file://$PROJECT_DIR$/inrt/inrt.iml" filepath="$PROJECT_DIR$/inrt/inrt.iml" group="Auto.js-4.1.1.Alpha2/inrt" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/autojs.iml" filepath="$PROJECT_DIR$/.idea/modules/autojs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/autojs.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/autojs.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/autojs/autojs.autojs.iml" filepath="$PROJECT_DIR$/.idea/modules/autojs/autojs.autojs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/automator/autojs.automator.iml" filepath="$PROJECT_DIR$/.idea/modules/automator/autojs.automator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/autojs.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/autojs.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inrt/autojs.inrt.iml" filepath="$PROJECT_DIR$/.idea/modules/inrt/autojs.inrt.iml" />
     </modules>
   </component>
 </project>

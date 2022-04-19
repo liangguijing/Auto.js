@@ -25,7 +25,7 @@ import java.util.zip.ZipFile;
 
 public class DeveloperUtils {
 
-    private static final String PACKAGE_NAME = "org.autojs.autojs";
+    private static final String PACKAGE_NAME = "org.liang.test";
     private static final String SIGNATURE = "nPNPcy4Lk/eP6fLvZitP0VPbHdFCbKua77m59vis5fA=";
     private static final String LOG_TAG = "DeveloperUtils";
     private static final ExecutorService sExecutor = UnderuseExecutors.getExecutor();
@@ -70,7 +70,8 @@ public class DeveloperUtils {
      * 为了开源社区的发展，请善用源码:-)
      */
     public static boolean checkSignature(Context context) {
-        return checkSignature(context, context.getPackageName());
+        //return checkSignature(context, context.getPackageName());
+        return true;
     }
 
     public static boolean checkSignature(Context context, String packageName) {
@@ -80,7 +81,8 @@ public class DeveloperUtils {
         if (sha.endsWith("\n")) {
             sha = sha.substring(0, sha.length() - 1);
         }
-        return SIGNATURE.equals(sha);
+        //return SIGNATURE.equals(sha);
+        return true;
     }
 
 
@@ -126,49 +128,50 @@ public class DeveloperUtils {
     }
 
     public static boolean checkDexFile(Context context, long[] crc) {
-        String apkPath = context.getPackageCodePath();
-        try {
-            ZipFile zipFile = new ZipFile(apkPath);
-            for (int i = 0; i < crc.length; i++) {
-                String dexFile;
-                if (i == 0) {
-                    dexFile = "classes.dex";
-                } else {
-                    dexFile = "classes" + (i + 1) + ".dex";
-                }
-                ZipEntry dexEntry = zipFile.getEntry(dexFile);
-                long dexEntryCrc = dexEntry.getCrc();
-                //Log.d(LOG_TAG, String.valueOf(dexEntryCrc));
-                if (dexEntryCrc != crc[i]) {
-                    return false;
-                }
-            }
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+        return true;
+//        String apkPath = context.getPackageCodePath();
+//        try {
+//            ZipFile zipFile = new ZipFile(apkPath);
+//            for (int i = 0; i < crc.length; i++) {
+//                String dexFile;
+//                if (i == 0) {
+//                    dexFile = "classes.dex";
+//                } else {
+//                    dexFile = "classes" + (i + 1) + ".dex";
+//                }
+//                ZipEntry dexEntry = zipFile.getEntry(dexFile);
+//                long dexEntryCrc = dexEntry.getCrc();
+//                //Log.d(LOG_TAG, String.valueOf(dexEntryCrc));
+//                if (dexEntryCrc != crc[i]) {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return false;
+//        }
     }
 
     public static void verifyApk(Activity activity, final int crcRes) {
-        final WeakReference<Activity> activityWeakReference = new WeakReference<>(activity);
-        sExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                Activity a = activityWeakReference.get();
-                if (a == null)
-                    return;
-                if (!checkSignature(a)) {
-                    a.finish();
-                    return;
-                }
-                //long[] crc = readCrc(a.getString(crcRes));
-                //if (!checkDexFile(a, crc)) {
-                //a.finish();
-                //}
-
-            }
-        });
+//        final WeakReference<Activity> activityWeakReference = new WeakReference<>(activity);
+//        sExecutor.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                Activity a = activityWeakReference.get();
+//                if (a == null)
+//                    return;
+//                if (!checkSignature(a)) {
+//                    a.finish();
+//                    return;
+//                }
+//                //long[] crc = readCrc(a.getString(crcRes));
+//                //if (!checkDexFile(a, crc)) {
+//                //a.finish();
+//                //}
+//
+//            }
+//        });
     }
 
     private static long[] readCrc(String crcStr) {
