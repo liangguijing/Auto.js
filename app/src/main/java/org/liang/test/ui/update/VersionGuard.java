@@ -27,29 +27,29 @@ public class VersionGuard {
     }
 
     public void checkForDeprecatesAndUpdates() {
-        mVersionService.readDeprecatedFromPrefIfNeeded(mActivity);
-        if (mVersionService.isCurrentVersionDeprecated()) {
-            showDeprecatedDialogIfNeeded();
-        } else {
-            checkForUpdatesIfNeeded();
-        }
+//        mVersionService.readDeprecatedFromPrefIfNeeded(mActivity);
+//        if (mVersionService.isCurrentVersionDeprecated()) {
+//            showDeprecatedDialogIfNeeded();
+//        } else {
+//            checkForUpdatesIfNeeded();
+//        }
     }
 
     private void checkForUpdatesIfNeeded() {
-        mVersionService.checkForUpdatesIfNeededAndUsingWifi(mActivity)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SimpleObserver<VersionInfo>() {
-
-                    @Override
-                    public void onNext(@io.reactivex.annotations.NonNull VersionInfo versionInfo) {
-                        if (mVersionService.isCurrentVersionDeprecated()) {
-                            showDeprecatedDialogIfNeeded();
-                        } else {
-                            showUpdateInfoIfNeeded(versionInfo);
-                        }
-                    }
-
-                });
+//        mVersionService.checkForUpdatesIfNeededAndUsingWifi(mActivity)
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new SimpleObserver<VersionInfo>() {
+//
+//                    @Override
+//                    public void onNext(@io.reactivex.annotations.NonNull VersionInfo versionInfo) {
+//                        if (mVersionService.isCurrentVersionDeprecated()) {
+//                            showDeprecatedDialogIfNeeded();
+//                        } else {
+//                            showUpdateInfoIfNeeded(versionInfo);
+//                        }
+//                    }
+//
+//                });
     }
 
     private void showUpdateInfoIfNeeded(org.liang.test.network.entity.VersionInfo info) {

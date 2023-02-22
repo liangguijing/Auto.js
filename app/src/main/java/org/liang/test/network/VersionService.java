@@ -95,24 +95,25 @@ public class VersionService {
     }
 
     private Observable<VersionInfo> checkUpdateIfUsingWifi(Context context) {
-        if (!NetworkUtils.isWifiAvailable(context)) {
-            return Observable.empty();
-        }
-        Observable<VersionInfo> observable = checkForUpdates();
-        observable.subscribe(new SimpleObserver<VersionInfo>() {
-            @Override
-            public void onNext(@NonNull VersionInfo versionInfo) {
-                if (versionInfo.isValid()) {
-                    setVersionInfo(versionInfo);
-                }
-            }
-
-            @Override
-            public void onError(@NonNull Throwable e) {
-                e.printStackTrace();
-            }
-        });
-        return observable;
+        return Observable.empty();
+//        if (!NetworkUtils.isWifiAvailable(context)) {
+//            return Observable.empty();
+//        }
+//        Observable<VersionInfo> observable = checkForUpdates();
+//        observable.subscribe(new SimpleObserver<VersionInfo>() {
+//            @Override
+//            public void onNext(@NonNull VersionInfo versionInfo) {
+//                if (versionInfo.isValid()) {
+//                    setVersionInfo(versionInfo);
+//                }
+//            }
+//
+//            @Override
+//            public void onError(@NonNull Throwable e) {
+//                e.printStackTrace();
+//            }
+//        });
+//        return observable;
     }
 
     private void setVersionInfo(VersionInfo result) {
